@@ -10,15 +10,16 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($tableData['data'] as $row)
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            @foreach ($tableData['data'] as $index => $row)
+                <tr class="{{ $index % 2 == 0 ? 'bg-blue-200' : 'bg-red-200' }} border-b dark:border-gray-700 dark:bg-gray-800">
                 @foreach ($row as $cell)
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {{$cell}}
                     </th>    
                 @endforeach
-            </tr>    
+                </tr>
             @endforeach
-        </tbody>
+        </tbody>    
+
     </table>
 </div>
